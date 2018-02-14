@@ -21,9 +21,10 @@ if(!!window.AWSCognito && !!window.AmazonCognitoIdentity){
 
 // Config for Amazon Cognito service specifically.
 AWSCognito.config.region = 'us-west-2';
+
 var poolData = {
-    UserPoolId : 'us-west-2_jBbwrBRab', // your user pool id here pro240pool
-    ClientId : 'urrkj1fg0ctc24k8um29ge3de' // your app client id here pro240client
+    UserPoolId : 'us-east-2_FtkIryeEH', // your user pool id here pro240pool
+    ClientId : '13a6ciui9ksu5p942bi81rfimq' // your app client id here pro240client
 };
 var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 var cognitoUser;
@@ -92,8 +93,6 @@ function onSignUpResult(err, result){
 	showLoggedInView();
 }
 
-
-
 // Config for a service user who has roles to access Lambda, S3 and other services included in Amazon's basic SDK.
 var accessKeyId = 'putyouraccessidhere';
 var secretAccessKey = 'putyoursecretaccesskeyhere';
@@ -123,48 +122,40 @@ function callLambdaFunctionOnAws() {
 };
 
 function performLogin(){
-	var authenticationData = {
-        Username : 'username',
-        Password : 'password',
-    };
-    var authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails(authenticationData);
+	var usernameToLogin = document.getElementById("loginUsername").value;
+	var passwordToLogin = document.getElementById("loginPassword").value;
+	
+	console.log("Retrieved this username from the login form: "+usernameToLogin);
+	console.log("Retrieved this password from the login form: "+passwordToLogin);
+	
+    var authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails({
+		Username : usernameToLogin,
+        Password : passwordToLogin
+	});
     var userData = {
-        Username : 'username',
+        Username : usernameToLogin,
         Pool : userPool
     };
-    var cognitoUser = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
-    cognitoUser.authenticateUser(authenticationDetails, {
-        onSuccess: function (result) {
-            console.log('access token + ' + result.getAccessToken().getJwtToken());
- 
-            //POTENTIAL: Region needs to be set if not already set previously elsewhere.
-            AWS.config.region = '<region>';
- 
-            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                IdentityPoolId : '...', // your identity pool id here
-                Logins : {
-                    // Change the key below according to the specific region your user pool is in.
-                    'cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID>' : result.getIdToken().getJwtToken()
-                }
-            });
-            
-            //refreshes credentials using AWS.CognitoIdentity.getCredentialsForIdentity()
-            AWS.config.credentials.refresh((error) => {
-                if (error) {
-                     console.error(error);
-                } else {
-                     // Instantiate aws sdk service objects now that the credentials have been updated.
-                     // example: var s3 = new AWS.S3();
-                     console.log('Successfully logged!');
-                }
-            });
-        },
+    var cognitoUserToLogin = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
+    cognitoUserToLogin.authenticateUser(authenticationDetails, {
+        onSuccess: onSuccessfulLogin,
  
         onFailure: function(err) {
             alert(err);
         },
+		
+		newPasswordRequired: function(obj){
+			alert("new password required: "+JSON.stringify(obj));
+		},
  
     });
+}
+
+function onSuccessfulLogin(result) {
+	console.log("You are successfully logged in.");
+	//console.log('access token + ' + result.getAccessToken().getJwtToken());
+    /*Use the idToken for Logins Map when Federating User Pools with Cognito Identity or when passing through an Authorization Header to an API Gateway Authorizer*/
+    //console.log('idToken + ' + result.idToken.jwtToken);
 }
 
 showNotLoggedInView();
