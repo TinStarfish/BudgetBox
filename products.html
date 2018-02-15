@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<style = "style.css"></style>
+<html>
+    <h1>Products</h1>
+     <div class="navigationDiv">
+            <h3>Navigation (coming soon)</h3>
+                <button onclick="changePage('cart')">Checkout</button>
+                <button onclick="changePage('userProfile')">My Profile</button>
+        </div>
+    <div class = "productsDiv">
+        <h2>Food Items</h2>
+            Apple <button onclick="addCart('apple')">Add to cart</button><br>
+            Spicy Meatballs <button onclick="addCart('spicy_meatballs')">Add to cart</button><br>
+            Meme Sauce <button onclick="addCart('meme_sauce')">Add to cart</button><br>
+        
+        <h2>Other Products </h2>
+            Broken Dreams <button onclick="addCart('broken_dreams')">Add to cart</button><br>
+            Sadness <button onclick="addCart('sadness')">Add to cart</button><br>
+            Chair (Only 399) <button onclick="addCart('chair_only399')">Add to cart</button><br>
+    </div>
+    <div class = "cart">
+        <h2>Cart</h2>
+             <div id = "cartText">Empty</div>
+                <button onclick = "">Continue to Checkout</button>
+                <button onclick = "resetCart()">Clear Cart</button>
+    
+    </div>
+    <script src="script_cart.js"></script>
+</html>

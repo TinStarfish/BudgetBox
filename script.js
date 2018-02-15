@@ -20,14 +20,22 @@ if(!!window.AWSCognito && !!window.AmazonCognitoIdentity){
 }
 
 // Config for Amazon Cognito service specifically.
-AWSCognito.config.region = 'us-west-2';
+AWSCognito.config.region = 'us-east-2';
 
 var poolData = {
-    UserPoolId : 'us-east-2_FtkIryeEH', // your user pool id here pro240pool
-    ClientId : '13a6ciui9ksu5p942bi81rfimq' // your app client id here pro240client
+    UserPoolId : 'us-east-2_cQ01gzmeO', // your user pool id here pro240pool
+    ClientId : '5gjooturail1hh1aemr49g3qm0' // your app client id here pro240client
 };
 var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 var cognitoUser;
+
+function changePage(pageName) {
+    
+    if (window.location!=pageName) {
+    window.location = pageName;
+    }
+    
+}
 
 function createAccount(){
 	console.log("executing createAccount()...");
@@ -61,9 +69,20 @@ function createAccount(){
 
 function logout(){
 	console.log("executing logout()...");
+    if (cognitoUser =! null) {
+        cognitoUser.signOut;
+    }
 	showNotLoggedInView();
+    
     console.log('End of logout function');
 };
+
+function changePage(pageName){
+    
+    if (pageName != window.location) {
+        window.location = pageName;
+    }
+}
 
 function showNotLoggedInView(){
 	console.log("executing showNotLoggedInView()...");
@@ -75,7 +94,7 @@ function showNotLoggedInView(){
 function showLoggedInView(){
 	console.log("executing showLoggedInView()...");
 	$(".createAccountDiv").hide();
-    $("#usernameDiv").html(cognitoUser.getUsername())
+    $("#usernameDiv").html(cognitoUser.getUsername);
 	$(".logoutDiv").show();
     console.log('End of showLoggedInView function');
 }
@@ -88,7 +107,7 @@ function onSignUpResult(err, result){
 	}
 	console.log('Sign up success: '+JSON.stringify(result));
 	cognitoUser = result.user;
-	console.log('user name is ' + cognitoUser.getUsername());
+	console.log('user name is ' + cognitoUser.getUsername);
     
 	showLoggedInView();
 }
@@ -149,13 +168,34 @@ function performLogin(){
 		},
  
     });
+    
 }
 
 function onSuccessfulLogin(result) {
 	console.log("You are successfully logged in.");
+    showLoggedInView();
 	//console.log('access token + ' + result.getAccessToken().getJwtToken());
     /*Use the idToken for Logins Map when Federating User Pools with Cognito Identity or when passing through an Authorization Header to an API Gateway Authorizer*/
     //console.log('idToken + ' + result.idToken.jwtToken);
 }
 
-showNotLoggedInView();
+function initiateApp(){
+    cognitoUser = userPool.getCurrentUser();
+    if (cognitoUser == null) {
+            console.log("No session found in browser storage");
+            showNotLoggedInView();
+    }else{
+        console.log("A user session was found in browser storage: "+JSON.stringify(cognitoUser));
+
+        cognitoUser.getSession(function(err, session) {
+            if (err) {
+                console.log("Even though user sesssion was found in browser storage, the session is invalid.");
+                howNotLoggedInView();
+                return;
+            }
+            showLoggedInView();
+        });
+    }
+}
+
+initiateApp();

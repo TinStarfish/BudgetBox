@@ -6,8 +6,16 @@
 	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
 	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
 	</head>
-	
+	<img src = "picnicbasket.png" alt "Logo" style="width:200px;height:200px">
+    <h1>BudgetBox</h1>
+    
     <body>
+         <div class="navigationDiv">
+            <h3>Navigation</h3>
+                <button onclick="changePage(products)">Products</button>
+                <button onclick="changePage(cart)">Cart</button>
+                <button onclick="changePage(userProfile)">My Profile</button>
+        </div>
 		<div class="createAccountDiv" style="display: none;">
 			<h2>Create Account</h2>
             <form id="createAccountForm" action="">
@@ -16,18 +24,25 @@
                     Password: <input type="text" id="formPW"><br>
             </form>
 			<button onclick="createAccount()">Create Account</button>
-        <h2>or Login</h2>
-            <form id="LoginAccountForm" action="">
-                    Username/Email: <input type="text" id="loginUsername"><br>
-                    Password: <input type="text" id="loginPassword"><br>
+            <h2>Or Sign In</h2>
+            <form id = "signInForm" action = "">
+                    Username: <input type = "text" id = "loginUsername"><br>
+                    Password: <input type = "text" id = "loginPassword"><br>
             </form>
-			<button onclick="performLogin()">Login</button>
+            <button onclick="performLogin()">Sign In</button>
 		</div>
-		<div class="logoutDiv" style="display: none;">
-            
+        
+       
+        
+		<div class="logoutDiv" style="display: none;">   
 			<h2>Welcome</h2>
             <div id = "usernameDiv"></div>
             <button onclick="logout()">Logout</button>
+            <a href ="Bee%20Movie%20Script.pdf">
+            <img src = "topsecret.png" alt "topsecret">
+            </a>
+            
+            
 		</div>
     </body>
 	<script src="script.js"></script>
