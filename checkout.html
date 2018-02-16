@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
+	</head>
+    <a href="index.html">
+        <img src = "picnicbasket.png" alt "Logo" style="width:200px;height:200px">
+    </a>
+     <div class="navigationDiv">
+            <h3>Navigation (coming soon)</h3>
+                <button onclick="changePage('index.html')">Home</button>
+                <button onclick="changePage('products.html')">Continue Shopping</button>
+                <button onclick="changePage('userProfile.html')">My Profile</button>
+        </div>
+    
+    <h1>Recommended for You</h1>
+     Spicy Meatballs <button onclick="addCart('spicy_meatballs', 5)">Add to cart</button><br>
+    <h1>Items in Cart</h1>
+    <h2>Your items:</h2>
+    <div id = "finalCart">Empty</div> 
+    <h2>Your total:</h2>
+    <div id = "finalRunningTotal">$0</div>
+    
+    
+    <h1>Checkout</h1>
+    <h2>Customer Information</h2>
+    <form>
+        <label>Name (First / Last):
+        <input type="text" name="customer_name" required>
+        <input type="text" name="customer_last" required>
+        </label><br>
+         <label>Email Address:
+        <input type="text" name="customer_name" required>
+        </label><br>
+        <label>Continue as Guest or Sign up? (Discounts offered for signed in profile)
+            <br>
+        <button>Guest</button>
+        <button>Sign Up</button>
+        </label><br>
+        
+    <h2>Customer Address</h2>
+        <label>Address line 1:
+        <input type="text" name="customer_address_1" required>
+        </label><br>
+        <label>Address line 2:
+        <input type="text" name="customer_address_2">
+        </label><br>
+        <label>City:
+        <input type="text" name="customer_city" required>
+        </label><br>
+        <label>State/Province/Region:
+        <input type="text" name="customer_state" required>
+        </label><br>
+        <label>ZIP:
+        <input type="text" name="customer_zip" required>
+        </label><br>
+        <label>Country:
+        <input type="text" name="customer_country" required>
+        </label><br>
+        <label>Phone Number:
+        <input type="text" name="customer_phone" required>
+        </label><br>
+    <h2>Payment Information</h2>
+        <label>Card Type:
+        <input type="text" name="customer_card_type" required>
+        </label><br>
+        <label>Credit Card Number:
+        <input type="text" name="customer_CCN" required>
+        </label><br>
+        <label>Name on Card:
+        <input type="text" name="customer_CC_Name" required>
+        </label><br>
+        <label>Expiration:
+        <input type="text" name="customer_CC_Exp" required>
+        </label><br>
+        <label>CSV (3 digit pin):
+        <input type="text" name="customer_CC_CSV" required>
+        </label><br>
+    
+    </form>
+    <br>
+    <button>Purchase Items</button>
+    <button>Continue Shopping</button>
+    <br>
+    <button>Cancel Purchase</button><br><br>
+    
+    <script src="script_cart.js"></script>
+    
+    
+    
+</html>
