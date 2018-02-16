@@ -24,7 +24,8 @@
     <div id = "finalCart">Empty</div> 
     <h2>Your total:</h2>
     <div id = "finalRunningTotal">$0</div>
-    
+    <div id = "salesTaxText">+ (tax)</div>
+    <div id = "finalTotal">(final total)</div>
     
     <h1>Checkout</h1>
     <h2>Customer Information</h2>
@@ -35,6 +36,9 @@
         </label><br>
          <label>Email Address:
         <input type="text" name="customer_name" required>
+        </label><br>
+         <label>Phone Number (Optional):
+        <input type="text" name="customer_phone" required>
         </label><br>
         <label>Continue as Guest or Sign up? (Discounts offered for signed in profile)
             <br>
@@ -77,8 +81,8 @@
         <label>Expiration:
         <input type="text" name="customer_CC_Exp" required>
         </label><br>
-        <label>CSV (3 digit pin):
-        <input type="text" name="customer_CC_CSV" required>
+        <label>CCV/CVC (3 digit pin):
+        <input type="text" name="customer_CC_CCVCVC" required>
         </label><br>
     
     </form>

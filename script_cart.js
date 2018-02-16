@@ -3,10 +3,13 @@ console.log("Cart script successfullly loaded!")
 
 var cart = [];
 var runningTotal = 0;
+var salesTax = .05;
 var cartText = document.getElementById("cartText");
 var runningText = document.getElementById("runningTotal");
 var finalCartText = document.getElementById("finalCart");
 var finalTotalText = document.getElementById("finalRunningTotal");
+var checkoutTotalText = document.getElementById("finalTotal");
+var taxText = document.getElementById("salesTaxText");
 
 function getCart() { 
     return sessionStorage.getItem("Cart");
@@ -15,7 +18,19 @@ function getCart() {
 }
 
 function getTotal() {
-    return sessionStorage.getItem("Total");
+    
+    return JSON.parse(sessionStorage.getItem("Total"));
+    
+}
+
+function setSalesTax(tax) {
+    
+    salesTax = tax;
+    
+}
+
+function getSalesTax() {
+    return salesTax;
     
 }
 
@@ -58,10 +73,16 @@ function changePage(pageName) {
 }
 
 function finalCart() {
+        var total = getTotal();
+        var tax = getTotal() * getSalesTax();
+        var final = total + tax;
         console.log(getCart());
         finalCartText.innerHTML = getCart();
+    
         console.log(getTotal());
-        finalTotalText.innerHTML = "$" + getTotal();
+        finalTotalText.innerHTML = "Total: $" + getTotal();
+        taxText.innerHTML = "Tax: $" + tax;
+        checkoutTotalText.innerHTML = "Final Amount: $" + final;
     
 }
 
