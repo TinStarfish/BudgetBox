@@ -26,8 +26,10 @@ var poolData = {
     UserPoolId : 'us-east-2_cQ01gzmeO', // your user pool id here pro240pool
     ClientId : '5gjooturail1hh1aemr49g3qm0' // your app client id here pro240client
 };
+
 var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 var cognitoUser;
+
 
 function changePage(pageName) {
     
@@ -94,7 +96,8 @@ function showNotLoggedInView(){
 function showLoggedInView(){
 	console.log("executing showLoggedInView()...");
 	$(".createAccountDiv").hide();
-    $("#usernameDiv").html(cognitoUser.getUsername);
+    $("#usernameDiv").html("Welcome, " + cognitoUser.getUsername());
+    
 	$(".logoutDiv").show();
     console.log('End of showLoggedInView function');
 }

@@ -8,16 +8,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
 	</head>
     <link rel="stylesheet" type="text/css" href="style.css">
-	<img src = "picnicbasket.png" alt "Logo" style="width:200px;height:200px">
+	<img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
     <h1>BudgetBox</h1>
     
     <body>
          <div class="navigationDiv">
-            <h3>Navigation</h3>
                 <button onclick="changePage('products.html')">Products</button>
-                <button onclick="changePage('Products.html')">Shop</button>
                 <button onclick="changePage('checkout.html')">Cart</button>
                 <button onclick="changePage('userProfile.html')">My Profile</button>
+                <button onclick="logout()">Logout</button>
         </div>
 		<div class="createAccountDiv" style="display: none;">
 			<h2>Create Account</h2>
@@ -38,9 +37,31 @@
        
         
 		<div class="logoutDiv" style="display: none;">   
-			<h2>Welcome</h2>
-            <div id = "usernameDiv"></div>
-            <button onclick="logout()">Logout</button>
+			<h2 id = "usernameDive">Welcome, ####.</h2>
+            <p>
+            <h3>The BudgetBox Motto</h3>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat erat vel quam porttitor, nec posuere nibh facilisis. Nulla facilisi. Aliquam vel velit sed lectus vulputate lobortis. Etiam sodales pellentesque sem, lacinia luctus orci porttitor sit amet. Proin blandit diam eu metus dapibus rhoncus. Quisque ac augue tempus, tristique felis ac, pellentesque orci. Phasellus ac quam nulla. Maecenas pretium dui at pulvinar ullamcorper. Donec lobortis nibh enim, et porta quam pellentesque id. Cras mollis purus turpis, at dictum ante varius non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius ipsum eu quam semper pretium.
+            <br>
+            Nam elementum aliquet est et condimentum. Suspendisse at auctor mi. Nam ut nunc auctor, laoreet turpis ac, consectetur nunc. Vestibulum consequat risus ipsum, nec vehicula neque dictum non. Aliquam accumsan suscipit est, eget dignissim leo gravida eu. Vestibulum ultricies, enim a viverra volutpat, sapien mi eleifend mauris, id cursus nibh magna ut nunc. Cras non magna quis tortor pharetra mattis.
+            <h3>The BudgetBox Delivery Service!</h3>
+            Nam elementum aliquet est et condimentum. Suspendisse at auctor mi. Nam ut nunc auctor, laoreet turpis ac, consectetur nunc. Vestibulum consequat risus ipsum, nec vehicula neque dictum non. Aliquam accumsan suscipit est, eget dignissim leo gravida eu. Vestibulum ultricies, enim a viverra volutpat, sapien mi eleifend mauris, id cursus nibh magna ut nunc. Cras non magna quis tortor pharetra mattis.
+            </p>
+        
+        <div class = "bottomDiv" id = "bottomDiv">
+            <hr size = "3" color = "steelblue">
+            <a href="index.html">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+      </a>
+            <br>
+            
+            Copyright (2018).
+            <br>
+            BudgetBox Corp.
+            <br>
+            Site Design by: Trevor Waters (2018)
+        </div>
+            
+            
         
             
 		</div>
