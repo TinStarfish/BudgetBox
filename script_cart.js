@@ -7,17 +7,18 @@ var salesTax = .05;
 var shippingCost = 10;
 var flatShippingRate = 10;
 var discount = 10;
+
 var cartText = document.getElementById("cartText");
 var runningText = document.getElementById("runningTotal");
 var finalCartText = document.getElementById("finalCart");
+
 var finalTotalText = document.getElementById("finalRunningTotal");
-var checkoutTotalText = document.getElementById("finalTotal");
 var taxText = document.getElementById("salesTaxText");
 var shippingText = document.getElementById("shippingText");
 var discountText = document.getElementById("discountText");
+var checkoutTotalText = document.getElementById("finalTotal");
+
 var customerInfo;
-
-
 
 function getCart() { 
     return sessionStorage.getItem("Cart");
@@ -101,20 +102,20 @@ function changePage(pageName) {
 
 function finalCart() {
     
-    cartText.innerHTML = getCart();
+    finalCartText.innerHTML = getCart();
     
     var total = getTotal();
     var tax = Math.round(getTotal() * getSalesTax() * 100)/100;
     var shipping = Math.round(getShippingCost(shippingCost));
-    var final = total + tax - discount;
+    var final = Math.round(total + tax + shipping - discount) ;
     console.log(getCart());
     finalCartText.innerHTML = getCart();
     console.log(getTotal());
-    finalTotalText.innerHTML = "Total: $" + getTotal();
-    taxText.innerHTML = "Tax: $" + tax;
-    shippingText.innerHTML = "Shipping: $" + shipping;
-    discountText.innerHTML = "Discount: - $" + discount + " (Sign up for a discount on your first order!)";
-    checkoutTotalText.innerHTML = "Final Amount: $" + final;
+    finalTotalText.innerHTML = "Total: " + getTotal();
+    taxText.innerHTML = "Tax: +" + tax;
+    shippingText.innerHTML = "Shipping: +" + shipping;
+    discountText.innerHTML = "Discount: -" + discount + " (Sign up for a discount on your first order!)";
+    checkoutTotalText.innerHTML = "Final Amount:    $" + final;
         
 }
 
@@ -136,6 +137,7 @@ function setCustomerInformation() {
     var CC_Exp = document.getElementById("customer_CC_Exp").value;
     var CCV = document.getElementById("customer_CC_CCVCVC").value;
     var cart_amount = getTotal();
+    
     return (cart_amount + name + email + phone + address_1 + address_2 + city + state+ zip+ country + card_type + CCN + name_CCN + CC_Exp + CCV);
     
 

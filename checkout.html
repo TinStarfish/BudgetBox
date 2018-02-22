@@ -15,7 +15,6 @@
                 <button onclick="changePage('index.html')">Home</button>
                 <button onclick="changePage('products.html')">Continue Shopping</button>
                 <button onclick="changePage('userProfile.html')">My Profile</button>
-                <button onclick="logout()">Logout</button>
         </div>
     <div id = "form">
     <h1>Recommended for You</h1>
@@ -23,13 +22,16 @@
     <h1>Items in Cart</h1>
     <h2>Your items:</h2>
     <div id = "finalCart">Empty</div> 
+    <hr size = "1" color = "steelblue">
     <h2>Your total:</h2>
     <div id = "finalRunningTotal">+ (final running total)</div>
+        <hr size = "1" color = "steelblue">
     <div id = "salesTaxText">+ (tax)</div>
     <div id = "shippingText">+ (shipping)</div>
+    <hr size = "1" color = "steelblue">
     <div id = "discountText">- (discount)</div>
+    <hr size = "2" color = "steelblue">
     <div id = "finalTotal">(final total)</div>
-    
     
     <h1>Checkout</h1>
     <h2>Customer Information</h2>
@@ -104,7 +106,6 @@
     
      <div class="thankYouDiv" id = "thankYouDiv" style="display:none">
             <h2>Thank you, ####. Your order has been placed.</h2>
-               
                 <button onclick="changePage('index.html')">Track Shipment</button>
                 <br>
                 <button onclick="changePage('products.html')">Continue 
