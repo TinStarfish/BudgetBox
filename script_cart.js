@@ -20,6 +20,19 @@ var checkoutTotalText = document.getElementById("finalTotal");
 
 var customerInfo;
 
+window.onkeyup = function(e) {
+    var key = e.keyCode;
+    if (key == 13) {
+        console.log("ENTER");
+        
+        
+    }
+    console.log("NOT ENTER");
+    
+}
+
+
+
 function getCart() { 
     return sessionStorage.getItem("Cart");
     //return cart;

@@ -1,5 +1,5 @@
 body {
-background-color : #A1B1BD;
+background-color : #B0C1CF;
 text-align: justify;
 padding : 1%;
 font-family:sans-serif;
@@ -16,7 +16,8 @@ h1 {
 }
 
 h2 {
-    background-color : #D1A800;
+    background-color : #F2D96A;
+    padding : 2%;
     font-size : 38px;
 }
 

@@ -94,7 +94,7 @@
     </form>
     
     <br>
-    <button onclick = "purchaseItems()">Purchase Items</button>
+    <button onclick = "purchaseItems();thankYou()">Purchase Items</button>
     <button>Continue Shopping</button>
     <br>
     <button onclick = "cancelPurchase()">Cancel Purchase</button><br><br>
@@ -105,8 +105,9 @@
     
     
      <div class="thankYouDiv" id = "thankYouDiv" style="display:none">
-            <h2>Thank you, ####. Your order has been placed.</h2>
+            <h2 id = "thankYouText">Thank you, ####. Your order has been placed.</h2>
                 <button onclick="changePage('index.html')">Track Shipment</button>
+                <br>
                 <br>
                 <button onclick="changePage('products.html')">Continue 
                 Shopping</button>

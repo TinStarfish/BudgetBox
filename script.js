@@ -30,14 +30,28 @@ var poolData = {
 var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 var cognitoUser;
 
+var thankYouText = document.getElementById("thankYouText");
+
+window.onkeyup = function(e) {
+    var key = e.keyCode;
+    if (key == 13) {
+         performLogin();
+         
+    }
+    
+}
 
 function changePage(pageName) {
-    
     if (window.location!=pageName) {
     window.location = pageName;
     }
     
 }
+function thankYou() {
+   thankYouText.innerHTML = "Thank you, " + cognitoUser.getUsername() + ". Your order has been placed.";
+    
+}
+
 
 function createAccount(){
 	console.log("executing createAccount()...");
@@ -96,8 +110,7 @@ function showNotLoggedInView(){
 function showLoggedInView(){
 	console.log("executing showLoggedInView()...");
 	$(".createAccountDiv").hide();
-    $("#usernameDiv").html("Welcome, " + cognitoUser.getUsername());
-    
+    $("#usernameDiv").html("Welcome, " + cognitoUser.getUsername() + ".");
 	$(".logoutDiv").show();
     console.log('End of showLoggedInView function');
 }
@@ -110,7 +123,7 @@ function onSignUpResult(err, result){
 	}
 	console.log('Sign up success: '+JSON.stringify(result));
 	cognitoUser = result.user;
-	console.log('user name is ' + cognitoUser.getUsername);
+	//console.log('user name is ' + cognitoUser.getUsername);
     
 	showLoggedInView();
 }

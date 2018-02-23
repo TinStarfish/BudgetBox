@@ -22,20 +22,20 @@
             <form id="createAccountForm" action="">
                     Username: <input type="text" id="formUN"><br>
                     Email: <input type="text" id="formEM"><br>
-                    Password: <input type="text" id="formPW"><br>
+                    Password: <input type="password" id="formPW"><br>
             </form>
 			<button onclick="createAccount()">Create Account</button>
             <h2>Or Sign In</h2>
             <form id = "signInForm" action = "">
                     Username: <input type = "text" id = "loginUsername"><br>
-                    Password: <input type = "text" id = "loginPassword"><br>
+                    Password: <input type = "password" id = "loginPassword"><br>
             </form>
             <button onclick="performLogin()">Sign In</button>
 		</div>
         
        
         
-		<div class="logoutDiv" style="display: none;">   
+		<div class="logoutDiv" id = "logoutDiv" style="display: none;">   
 			<h2 id = "usernameDiv">Welcome, ####.</h2>
             <p>
             <h3>The BudgetBox Motto</h3>
@@ -45,7 +45,7 @@
             <h3>The BudgetBox Delivery Service!</h3>
             Nam elementum aliquet est et condimentum. Suspendisse at auctor mi. Nam ut nunc auctor, laoreet turpis ac, consectetur nunc. Vestibulum consequat risus ipsum, nec vehicula neque dictum non. Aliquam accumsan suscipit est, eget dignissim leo gravida eu. Vestibulum ultricies, enim a viverra volutpat, sapien mi eleifend mauris, id cursus nibh magna ut nunc. Cras non magna quis tortor pharetra mattis.
             </p>
-        
+        </div>
         <div class = "bottomDiv" id = "bottomDiv">
             <hr size = "3" color = "steelblue">
             <a href="index.html">
@@ -63,7 +63,7 @@
             
         
             
-		</div>
+		
     </body>
 	<script src="script.js"></script>
 </html>
