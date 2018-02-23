@@ -1,0 +1,43 @@
+Body{
+    background-color: #626063;
+}
+
+h1{
+    color: #E7E8E7;
+    text-align: right;
+}
+
+h3 {
+    color: #D41F18;
+}
+
+#Profile {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    margin: 150px;
+    background-color: #C4BFBC;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.createAccountDiv {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    margin: 150px;
+    background-color: #C4BFBC;
+}
+
+#createAccountForm {
+    display: block;
+    margin-bottom: 15px;
+}
+
+#signInForm {
+    display: block;
+    margin-bottom: 15px;
+}
