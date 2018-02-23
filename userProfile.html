@@ -1,6 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <h1>Profile</h1>
-    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+        <h1>Profile</h1>
+            <div class="header"></div>
+            <div class="navigationDiv">
+                    <button onclick="changePage('index.html')">Home</button>
+                    <button onclick="changePage('products.html')">Products</button>
+                    <button onclick="changePage('Products.html')">Shop</button>
+                    <button onclick="changePage('checkout.html')">Cart</button>
+            </div>
+        
+            <div id="Profile">
+                <h3>My Profile</h3>
+                <form id="userProfile" method="post">
+                    <label>Username: 
+                        <input type="text" id="Username"/>
+                        <br/>
+                    </label>
+                    <label>Password: 
+                        <input type="text" id="Password"/>
+                        <br/>
+                    </label>
+                    <label>Email: 
+                        <input type="text" id="Email"/>
+                        <br/>
+                    </label>
+                    <label>Name: 
+                        <input type="text" id="Name"/>
+                        <br/>
+                    </label>
+                    <label>Phone Number: 
+                        <input type="text" id="PhoneNumber"/>
+                        <br/>
+                    </label>
+                    <label>Address: 
+                        <input type="text" id="Address"/>
+                        <br/>
+                    </label>
+                    <label>Card Information: 
+                        <input type="text" id="CardInfo"/>
+                        <br/>
+                    </label>
+                    <input type="button" value="Submit" onclick="profileSubmit"/>
+                </form>
+            </div>
+    </body>
+    <script src="script.js"></script>
     
 </html>
