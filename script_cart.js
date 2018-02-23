@@ -235,7 +235,7 @@ function createTable(myProducts) {
 	}
 	myTable+="</tbody></table>";
 	
-	document.cartText.write(myTable);
+	document.getElementById('myItems').innerHTML = myTable;
 }
 
 setShippingCost();
