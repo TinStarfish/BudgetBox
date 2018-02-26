@@ -9,21 +9,26 @@
     <link rel = "stylesheet" type = "text/css" href = "style.css">
 	</head>
     <a href="index.html">
-        <img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
     </a>
-     <div class="navigationDiv">
+    <h1>Checkout</h1>
+       <body>
+         <div class="navigationDiv">
                 <button onclick="changePage('index.html')">Home</button>
-                <button onclick="changePage('products.html')">Continue Shopping</button>
-                <button onclick="changePage('userProfile.html')">My Profile</button>
+                <button onclick="changePage('products.html')">Products</button>
+                <button onclick="logout()"style="float: right;">Logout</button>
+                <button onclick="changePage('contactUs.html')">Contact Us</button>
+                <button onclick="changePage('administrative.html')">Admin (temp)</button>
+                <button onclick="changePage('checkout.html')"style="float: right;">Cart</button>
+                <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
+                
         </div>
     <div id = "form">
-    <h1>Recommended for You</h1>
-     Spicy Meatballs <button onclick="addCart('spicy_meatballs', 5)">Add to cart</button><br>
-    <h1>Items in Cart</h1>
-    <h2>Your items:</h2>
+    <h2>Items in Cart</h2>
+    <h3>Your items:</h3>
     <div id = "finalCart">Empty</div> 
     <hr size = "1" color = "steelblue">
-    <h2>Your total:</h2>
+    <h3>Your total:</h3>
     <div id = "finalRunningTotal">+ (final running total)</div>
         <hr size = "1" color = "steelblue">
     <div id = "salesTaxText">+ (tax)</div>
@@ -33,7 +38,6 @@
     <hr size = "2" color = "steelblue">
     <div id = "finalTotal">(final total)</div>
     
-    <h1>Checkout</h1>
     <h2>Customer Information</h2>
     
     <form>
@@ -123,7 +127,7 @@
   <div class = "bottomDiv" id = "bottomDiv">
         <hr size = "3" color = "steelblue">
         <a href="index.html">
-        <img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
       </a>
       <br>
         Copyright (2018).

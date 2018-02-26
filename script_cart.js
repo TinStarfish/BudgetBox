@@ -20,17 +20,6 @@ var checkoutTotalText = document.getElementById("finalTotal");
 
 var customerInfo;
 
-window.onkeyup = function(e) {
-    var key = e.keyCode;
-    if (key == 13) {
-        console.log("ENTER");
-        
-        
-    }
-    console.log("NOT ENTER");
-    
-}
-
 
 
 function getCart() { 
@@ -223,32 +212,6 @@ function dropDown() {
       }
     }
   }
-}
-
-function getProducts() {
-	console.log("Running getProducts.");
-	var myProducts = JSON.parse(products);
-	createTable(myProducts);
-}
-
-function createTable(myProducts) {
-	console.log("Running createTable.");
-	var products = myProducts;
-	var myTable = "<table><thead><tr>";
-	myTable+="<th scope=\"col\">Product Name</th>";
-	myTable+="<th scope=\"col\">Price</th>";
-	myTable+="</tr></thead><tbody>";
-	
-	for (i = 0; i < products.length; i++) {
-		myTable+="<tr><td>";
-		myTable+=products[i].name;
-		myTable+="</td><td>$";
-		myTable+=products[i].price;
-		myTable+="</td></tr>";
-	}
-	myTable+="</tbody></table>";
-	
-	document.getElementById('myItems').innerHTML = myTable;
 }
 
 setShippingCost();

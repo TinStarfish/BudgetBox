@@ -8,17 +8,19 @@
 	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
 	</head>
     <link rel="stylesheet" type="text/css" href="style.css">
-	<img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
-    <p>The Official BudgetBox Website</p>
+	<img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
     <body>
+          <body>
          <div class="navigationDiv">
-              <button onclick="changePage('index.html')">Home</button>
+                <button onclick="changePage('index.html')">Home</button>
                 <button onclick="changePage('products.html')">Products</button>
-                <button onclick="changePage('checkout.html')">Cart</button>
-                <button onclick="changePage('userProfile.html')">My Profile</button>
-                <button onclick="logout()">Logout</button>
+                <button onclick="logout()"style="float: right;">Logout</button>
+                <button onclick="changePage('contactUs.html')">Contact Us</button>
+                <button onclick="changePage('administrative.html')">Admin (temp)</button>
+                <button onclick="changePage('checkout.html')"style="float: right;">Cart</button>
+                <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
+                
         </div>
-        
         <h1>Admin</h1>
         <div class = "adminLoggedIn" id = "adminLoggedIn">
             <h2>Administrator View</h2>
@@ -134,7 +136,7 @@
          <div class = "bottomDiv" id = "bottomDiv">
             <hr size = "3" color = "steelblue">
             <a href="index.html">
-        <img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
       </a>
             <br>
             Copyright (2018).

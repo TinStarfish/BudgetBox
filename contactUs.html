@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   
+	<head>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
+	</head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
+    <h1>Contact Us</h1>
+         <div class="navigationDiv">
+                <button onclick="changePage('index.html')">Home</button>
+                <button onclick="changePage('products.html')">Products</button>
+                <button onclick="logout()"style="float: right;">Logout</button>
+                <button onclick="changePage('contactUs.html')">Contact Us</button>
+                <button onclick="changePage('administrative.html')">Admin (temp)</button>
+                <button onclick="changePage('checkout.html')"style="float: right;">Cart</button>
+                <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
+                
+        </div>
+            <div class = "contactDiv">
+                
+                <h2>Contact Us</h2>
+                <h3>Email:</h3>
+                concerns@budgetbox.com
+                <h3>Phone:</h3>
+                1-555-5151
+                <h3>Fax:</h3>
+                1-555-5152
+                
+        </div>
+            <h2>Email Us</h2>
+            <div class = "emailForm">
+                <form>
+                    Your email address:
+                    <input type = "email">
+                    <br>
+                    Your message:
+                    <input type = "text">
+                    <br>
+                    <button type = "button">Send email</button>
+                
+                </form>
+        
+        
+        
+        
+        </div>
+        <br>
+        
+          <div class = "bottomDiv" id = "bottomDiv">
+            <hr size = "3" color = "steelblue">
+            <a href="index.html">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
+      </a>
+            <br>
+            
+            Copyright (2018).
+            <br>
+            BudgetBox Corp.
+            <br>
+            Site Design by: Trevor Waters (2018)
+        </div>
+            
+	<script src="script.js"></script>
+</html>
