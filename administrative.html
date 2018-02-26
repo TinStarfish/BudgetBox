@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   
+	<head>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
+	</head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+    <body>
+         <div class="navigationDiv">
+                <button onclick="changePage('products.html')">Products</button>
+                <button onclick="changePage('checkout.html')">Cart</button>
+                <button onclick="changePage('userProfile.html')">My Profile</button>
+                <button onclick="logout()">Logout</button>
+        </div>
+        
+        <h1>Admin</h1>
+        <div class = "administratorLogin">
+            
+            <h2>Administrative Sign In</h2>
+             <center>
+                <form id = "signInForm" action = "">
+                        Username: <input type = "text" id = "loginUsername"><br>
+                        Password: <input type = "password" id = "loginPassword">
+                        <br>
+                        <br>
+                </form>
+           
+                <button onclick="performLogin()">Sign In</button>
+            </center>
+        
+        </div>
+        <br>
+        <div class = "adminLoggedIn" id = "adminLoggedIn">
+            <h2>Administrator View</h2>
+                <button id = "viewProducts" onclick = "">View Products</button>
+                <br>
+            <br>
+                <button id = "" onclick = "">View Users</button>
+        
+        </div>
+         <div class = "bottomDiv" id = "bottomDiv">
+            <hr size = "3" color = "steelblue">
+            <a href="index.html">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+      </a>
+            <br>
+            Copyright (2018).
+            <br>
+            BudgetBox Corp.
+            <br>
+            Site Design by: Trevor Waters (2018)
+        </div>
+        
+    </body>
+    
+    <script src="script.js"></script>
+    
+</html>
