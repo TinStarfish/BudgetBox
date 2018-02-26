@@ -9,8 +9,10 @@
 	</head>
     <link rel="stylesheet" type="text/css" href="style.css">
 	<img src = "picnicbasket_2.png" alt "Logo" style="width:200px;height:200px">
+    <p>The Official BudgetBox Website</p>
     <body>
          <div class="navigationDiv">
+              <button onclick="changePage('index.html')">Home</button>
                 <button onclick="changePage('products.html')">Products</button>
                 <button onclick="changePage('checkout.html')">Cart</button>
                 <button onclick="changePage('userProfile.html')">My Profile</button>
@@ -18,28 +20,115 @@
         </div>
         
         <h1>Admin</h1>
-        <div class = "administratorLogin">
-            
-            <h2>Administrative Sign In</h2>
-             <center>
-                <form id = "signInForm" action = "">
-                        Username: <input type = "text" id = "loginUsername"><br>
-                        Password: <input type = "password" id = "loginPassword">
-                        <br>
-                        <br>
-                </form>
-           
-                <button onclick="performLogin()">Sign In</button>
-            </center>
-        
-        </div>
-        <br>
         <div class = "adminLoggedIn" id = "adminLoggedIn">
             <h2>Administrator View</h2>
-                <button id = "viewProducts" onclick = "">View Products</button>
+                <button id = "viewProducts" onclick = "viewProducts()">View Products</button>
                 <br>
+                <br>
+            <div class = "productsView" id = "productsView">
+                <table id = "productsTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>In Stock</th>
+                        <th>Edit</th>
+                    </tr>
+                    <tr>
+                        <td>1010101</td>
+                        <td>Apple</td>
+                        <td>$1</td>
+                        <td>65</td>
+                        <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+                     <tr>
+                        <td>1511121</td>
+                        <td>Spicy Meatballs</td>
+                        <td>$5</td>
+                        <td>18</td>
+                         <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+                     <tr>
+                        <td>1511134</td>
+                        <td>Meme Sauce</td>
+                        <td>$4</td>
+                        <td>24</td>
+                         <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>1234567</td>
+                        <td>Broken Dreams</td>
+                        <td>$11</td>
+                        <td>3</td>
+                        <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+            </table>
+
+                
+            </div>
+                <br>
+                <button id = "sviewUsers" onclick = "viewUsers()">View Users</button>
+                 <br>
             <br>
-                <button id = "" onclick = "">View Users</button>
+            <div class = "usersView" id = "usersView">
+                <table id = "usersTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Admin</th>
+                        <th>Current</th>
+                        <th>Edit</th>
+                    </tr>
+                    <tr>
+                        <td>1010</td>
+                        <td>Trevor</td>
+                        <td>True</td>
+                        <td>True</td>
+                        <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+                        
+                     <tr>
+                        <td>1614</td>
+                        <td>Ricky</td>
+                        <td>True</td>
+                        <td>True</td>
+                         <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                         
+                    </tr>
+                     <tr>
+                        <td>1731</td>
+                        <td>Sarah</td>
+                        <td>True</td>
+                        <td>True</td>
+                         <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>12345</td>
+                        <td>Trig Jegman</td>
+                        <td>False</td>
+                        <td>False</td>
+                        <td>
+                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            </td>
+                    </tr>
+            </table>
+            
+            
+            </div>
         
         </div>
          <div class = "bottomDiv" id = "bottomDiv">

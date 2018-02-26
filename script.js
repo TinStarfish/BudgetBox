@@ -32,6 +32,7 @@ var cognitoUser;
 
 var thankYouText = document.getElementById("thankYouText");
 
+//Listen for enter key while signing in
 window.onkeyup = function(e) {
     var key = e.keyCode;
     if (key == 13) {
@@ -41,18 +42,36 @@ window.onkeyup = function(e) {
     
 }
 
+//Change to any page by passing it the name of the page (i.e: 'index.html')
 function changePage(pageName) {
     if (window.location!=pageName) {
     window.location = pageName;
     }
     
 }
+//Show Thank you after check out process
 function thankYou() {
    thankYouText.innerHTML = "Thank you, " + cognitoUser.getUsername() + ". Your order has been placed.";
     
 }
+//View products on admin page
+function viewProducts() {    
+    console.log("executing viewProducts()...");
+	$("productsView").show();
+    console.log('End of viewProducts()');
+    
+}
+//View users on admin page
+function viewUsers() {
+    console.log("executing viewProducts()...");
+	$("usersView").show();
+    console.log('End of viewProducts()');
+    
+}
 
+//function 
 
+//Create account through sign in page
 function createAccount(){
 	console.log("executing createAccount()...");
 	
@@ -83,6 +102,7 @@ function createAccount(){
     console.log('End of createAccount function');
 };
 
+//Logout function
 function logout(){
 	console.log("executing logout()...");
     if (cognitoUser =! null) {
@@ -93,13 +113,7 @@ function logout(){
     console.log('End of logout function');
 };
 
-function changePage(pageName){
-    
-    if (pageName != window.location) {
-        window.location = pageName;
-    }
-}
-
+//
 function showNotLoggedInView(){
 	console.log("executing showNotLoggedInView()...");
 	$(".createAccountDiv").show();
@@ -107,6 +121,7 @@ function showNotLoggedInView(){
     console.log('End of showNotLoggedInView function');
 }
 
+//
 function showLoggedInView(){
 	console.log("executing showLoggedInView()...");
 	$(".createAccountDiv").hide();
@@ -115,6 +130,7 @@ function showLoggedInView(){
     console.log('End of showLoggedInView function');
 }
 
+//
 function onSignUpResult(err, result){
 	if (err) {
 		console.log('Sign up failure: '+err);
@@ -131,7 +147,7 @@ function onSignUpResult(err, result){
 // Config for a service user who has roles to access Lambda, S3 and other services included in Amazon's basic SDK.
 var accessKeyId = 'putyouraccessidhere';
 var secretAccessKey = 'putyoursecretaccesskeyhere';
-
+//
 AWS.config.update({
 	region: 'us-east-2',
 	credentials: new AWS.Credentials(accessKeyId, secretAccessKey)
@@ -144,6 +160,7 @@ var params = {
 	LogType : 'None'
 };
 
+//
 function callLambdaFunctionOnAws() {
 	lambda.invoke(params, function(err, data) {
 		if (err) {
@@ -156,6 +173,7 @@ function callLambdaFunctionOnAws() {
 	});
 };
 
+//
 function performLogin(){
 	var usernameToLogin = document.getElementById("loginUsername").value;
 	var passwordToLogin = document.getElementById("loginPassword").value;
@@ -187,6 +205,7 @@ function performLogin(){
     
 }
 
+//
 function onSuccessfulLogin(result) {
 	console.log("You are successfully logged in.");
     showLoggedInView();
@@ -195,6 +214,7 @@ function onSuccessfulLogin(result) {
     //console.log('idToken + ' + result.idToken.jwtToken);
 }
 
+//
 function initiateApp(){
     cognitoUser = userPool.getCurrentUser();
     if (cognitoUser == null) {

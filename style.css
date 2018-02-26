@@ -5,8 +5,18 @@ padding : 1%;
 font-family:sans-serif;
     
 }
+
+
+
+</s
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+
+
+.content {
+    max-width: 500px;
+    margin: auto;
+}
 
 h1 {
     color : floralwhite;
@@ -74,7 +84,7 @@ input {
 }
 
 p {
-    text-decoration-line: overline;
+    
     
 }
 
@@ -92,5 +102,33 @@ p {
     font-weight: bold;
     font-size : 18px;
     
+    
+}
+
+table, th, td {
+    color : floralwhite;  
+    border-collapse: collapse;
+    padding : 15px;
+    border-bottom: 2px solid black;
+    
+}
+
+table {
+    
+    width : 80%;
+    color : floralwhite;
+    
+}
+
+th { 
+    color : black;
+    background-color : #F2D96A;
+    border-bottom : 2px black;
+    
+}
+
+td {
+    
+    background-color :#5D7FA4;
     
 }
