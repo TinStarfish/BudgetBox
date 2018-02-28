@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
    
+    <link rel = "icon" href = "pageIcon.png">
 	<head>
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 	<img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
     <body>
+        <h1>Admin</h1>
           <body>
          <div class="navigationDiv">
                 <button onclick="changePage('index.html')">Home</button>
@@ -21,7 +23,7 @@
                 <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
                 
         </div>
-        <h1>Admin</h1>
+        
         <div class = "adminLoggedIn" id = "adminLoggedIn">
             <h2>Administrator View</h2>
                 <button id = "viewProducts" onclick = "viewProducts()">View Products</button>

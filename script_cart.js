@@ -8,8 +8,8 @@ var shippingCost = 10;
 var flatShippingRate = 10;
 var discount = 10;
 
-var cartText = document.getElementById("cartText");
-var runningText = document.getElementById("runningTotal");
+var cartText = document.getElementById("itemsTable");
+var runningText = document.getElementById("totalTable");
 var finalCartText = document.getElementById("finalCart");
 
 var finalTotalText = document.getElementById("finalRunningTotal");
@@ -20,7 +20,42 @@ var checkoutTotalText = document.getElementById("finalTotal");
 
 var customerInfo;
 
+function getProducts() {
+	console.log("Running getProducts.");
+	var myProducts = JSON.parse(products);
+	createTable(myProducts);
+}
 
+window.onkeyup = function(e) {
+    var key = e.keyCode;
+    if (key == 13) {
+        console.log("ENTER");
+        
+        
+    }
+    console.log("NOT ENTER");
+    
+}
+
+function createTable(myProducts) {
+	console.log("Running createTable.");
+	var products = myProducts;
+	var myTable = "<table><thead><tr>";
+	myTable+="<th scope=\"col\">Product Name</th>";
+	myTable+="<th scope=\"col\">Price</th>";
+	myTable+="</tr></thead><tbody>";
+	
+	for (i = 0; i < products.length; i++) {
+		myTable+="<tr><td>";
+		myTable+=products[i].name;
+		myTable+="</td><td>$";
+		myTable+=products[i].price;
+		myTable+="</td></tr>";
+	}
+	myTable+="</tbody></table>";
+	
+	document.getElementById('myItems').innerHTML = myTable;
+}
 
 function getCart() { 
     return sessionStorage.getItem("Cart");
@@ -84,14 +119,20 @@ function getShippingCost() {
 function updateCart() {
     sessionStorage.setItem("Cart",cart);
     console.log(getCart());
-    cartText.innerHTML = getCart();
+    
+    for (i = 0; i <= cart.length; i++) {
+        for (j = 1; j <= cart.length; j++) {
+            cartText.rows[j].cells[i].innerHTML = getCart();
+        
+            }
+    }
     
 }
 
 function updateRunningTotal() {
     sessionStorage.setItem("Total",runningTotal);
     console.log(runningTotal);
-    runningText.innerHTML = "$" + runningTotal;
+    runningText.rows[1].cells[0] = "$" + getTotal();
     
 }
 

@@ -34,13 +34,36 @@ h1 {
 
 h2 {
     background-color : #F2D96A;
-    padding : 2%;
+    padding : 1%;
     font-size : 38px;
 }
 
 h3 {
     font-size : 24px;
     
+    
+}
+
+#edit {
+     background-color : #5D7FA4;
+    border-bottom-color : steelblue;
+    border : solid;
+    box-shadow : 2.5px 2.5px;
+    color: black;
+    padding : 10px 24px;
+    text-align : center;
+    text-decoration : none;
+    display : inline-block;
+    font-size : 16px;
+    
+    
+}
+
+.productsDiv {
+    padding : 3%;
+    font-weight: bold;
+    font-size : 18px;
+    float : middle;
     
 }
 
@@ -60,6 +83,10 @@ button {
 }
 
 .navigationDiv {
+    font-weight : bold;
+    position : -webkit-sticky;
+    position : sticky;
+    top : 0;
     margin : 0;
     padding : 2%;
     width : 98%;
@@ -68,16 +95,13 @@ button {
     
 }
 
-.productsDiv {
-    padding : 3%;
-    font-weight: bold;
-    font-size : 18px;
-
-}
-
-.cart {
-    padding 3%;
-
+.bottomDiv {
+   position : static;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
     
     
 }
@@ -97,6 +121,12 @@ p {
     
 }
 
+.changePageIcon {
+    width : 1;
+    height : 2;
+    
+}
+
 .center {
  margin : auto;
     width : 50%;
@@ -107,15 +137,18 @@ p {
 }
 
 .cart {
+    position : -webkit-sticky;
+    position : sticky;
+    top : 0;
+    right : 0;
     padding : 3%;
     font-weight: bold;
     font-size : 18px;
     
-    
 }
 
 table, th, td {
-    color : floralwhite;  
+    color : black;  
     border-collapse: collapse;
     padding : 15px;
     border-bottom: 2px solid black;
@@ -123,7 +156,6 @@ table, th, td {
 }
 
 table {
-    
     width : 80%;
     color : floralwhite;
     
@@ -131,13 +163,8 @@ table {
 
 th { 
     color : black;
-    background-color : #F2D96A;
+    background-color : steelblue;
     border-bottom : 2px black;
     
 }
 
-td {
-    
-    background-color :#5D7FA4;
-    
-}
