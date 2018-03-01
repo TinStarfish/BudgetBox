@@ -32,6 +32,9 @@ var cognitoUser;
 
 var thankYouText = document.getElementById("thankYouText");
 
+var productList = [];
+var listID = [11];
+
 //Listen for enter key while signing in
 window.onkeyup = function(e) {
     var key = e.keyCode;
@@ -54,22 +57,10 @@ function thankYou() {
    thankYouText.innerHTML = "Thank you, " + cognitoUser.getUsername() + ". Your order has been placed.";
     
 }
-//View products on admin page
-function viewProducts() {    
-    console.log("executing viewProducts()...");
-	$("productsView").show();
-    console.log('End of viewProducts()');
-    
-}
-//View users on admin page
-function viewUsers() {
-    console.log("executing viewProducts()...");
-	$("usersView").show();
-    console.log('End of viewProducts()');
-    
-}
 
-//function 
+
+
+
 
 //Create account through sign in page
 function createAccount(){

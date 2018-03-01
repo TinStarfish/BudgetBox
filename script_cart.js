@@ -1,3 +1,5 @@
+//Code by Trevor Waters (2018)
+
 console.log("Cart script activating...");
 console.log("Cart script successfullly loaded!")
 

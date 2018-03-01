@@ -29,6 +29,9 @@
                 <button id = "viewProducts" onclick = "viewProducts()">View Products</button>
                 <br>
                 <br>
+             <button id = "newProduct" onclick = " newProduct()">New Product</button>
+                <br>
+                <br>
             <div class = "productsView" id = "productsView">
                 <table id = "productsTable">
                     <tr>
@@ -44,7 +47,7 @@
                         <td>$1</td>
                         <td>65</td>
                         <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                            <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
                             </td>
                     </tr>
                      <tr>
@@ -53,7 +56,7 @@
                         <td>$5</td>
                         <td>18</td>
                          <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                         <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
                             </td>
                     </tr>
                      <tr>
@@ -62,7 +65,7 @@
                         <td>$4</td>
                         <td>24</td>
                          <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                         <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
                             </td>
                     </tr>
                     <tr>
@@ -71,7 +74,7 @@
                         <td>$11</td>
                         <td>3</td>
                         <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                        <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
                             </td>
                     </tr>
             </table>
@@ -79,8 +82,12 @@
                 
             </div>
                 <br>
-                <button id = "sviewUsers" onclick = "viewUsers()">View Users</button>
-                 <br>
+            <br>
+            <button id = "viewUsers" onclick = "viewUsers()">View Users</button>
+            <br>
+             <br>
+             <button id = "viewUsers" onclick = "viewUsers()">New Users</button>
+            <br>
             <br>
             <div class = "usersView" id = "usersView">
                 <table id = "usersTable">
@@ -97,7 +104,7 @@
                         <td>True</td>
                         <td>True</td>
                         <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                         <button id="edit" type="submit" name="edit" onclick = "editUser(1010, 'Trevor', true)">Edit</button>
                             </td>
                     </tr>
                         
@@ -107,7 +114,7 @@
                         <td>True</td>
                         <td>True</td>
                          <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                         <button id="edit" type="submit" name="edit" onclick = "editUser(1010, 'Trevor', true)">Edit</button>
                             </td>
                          
                     </tr>
@@ -117,7 +124,7 @@
                         <td>True</td>
                         <td>True</td>
                          <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                       <button id="edit" type="submit" name="edit" onclick = "editUser(1010, 'Trevor', true)">Edit</button>
                             </td>
                     </tr>
                     <tr>
@@ -126,13 +133,76 @@
                         <td>False</td>
                         <td>False</td>
                         <td>
-                         <input id="edit" type="submit" name="edit" value="Edit" />
+                         <button id="edit" type="submit" name="edit" onclick = "editUser(1010, 'Trevor', true)">Edit</button>
                             </td>
                     </tr>
             </table>
-            
+            <div id = "popupProduct" class = "modal">
+                <span class = "close">&times;</span>
+                <h1>Product View</h1>
+                <p id = "productID">ID: 1010101</p>
+                <p id = "productName">Name: 'Apple'</p>
+                <p id = "productPrice">Price: $3</p>
+                <input type = "text" id ="nameChangeText" value = "Apple">
+                <br>
+                <button>Change Name</button>
+                <br>
+                <input type = "number" value = "3">
+                <br>
+                <button>Change Price</button>
+                <br>
+                <p id = "productInStock">In stock: 65</p>
+                <button onclick = "subtractStock()">-</button>
+                <input type = "number" value = "65">
+                <button onclick = "addStock()">+</button>
+                
+                <br>
+                <br>
+                <button>Delete</button>
+                </div>
             
             </div>
+            <div id = "popupUser" class = "modal">
+                <span class = "close">&times;</span>
+                <h1>User View</h1>
+                <p id = "adminEditText">ID: 1010</p>
+                <p id = "adminEditText">Name: 'Trevor'</p>
+                <input type = "text" id ="nameChangeText" value = "Trevor">
+                <br>
+                <button onclick = "changeName()">Change Name</button>
+                <br>
+                <p id = "adminEditText">Admin</p>
+                <button onclick = "toggleAdmin()">Toggle</button>
+                <br>
+                <p id = "adminEditText">Current</p>
+                <button onclick = "toggleCurrent()">Toggle</button>
+                <br>
+                <button>Delete</button>
+                </div>
+            
+             <div id = "popupNewProduct" class = "modal">
+                <span class = "close">&times;</span>
+                <h1>New Product</h1>
+                <p name = "productID_new" id = "productID_new">ID:</p>
+                <input type = "text" id ="nameSetText" value = "Apple">
+                <br>
+                <button onclick = "setName()">Set Name</button>
+                <br>
+                <input type = "number" id = "priceSetText" value = "3">
+                <br>
+                <button onclick = "setPrice()">Set Price</button>
+                <br>
+                <p id = "productInStock">In stock: 0</p>
+                <button onclick = "subtractStock()">-</button>
+                <input type = "number" value = "0">
+                <button onclick = "addStock()">+</button>
+                
+                <br>
+                  <br>
+                <button onclick = "createProduct()">Create Product</button>
+                <br>
+                <button>Delete</button>
+                </div>
         
         </div>
          <div class = "bottomDiv" id = "bottomDiv">
@@ -150,6 +220,6 @@
         
     </body>
     
-    <script src="script.js"></script>
+    <script src="script_admin.js"></script>
     
 </html>
