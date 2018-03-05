@@ -182,26 +182,31 @@
             
              <div id = "popupNewProduct" class = "modal">
                 <span class = "close">&times;</span>
-                <h1>New Product</h1>
-                <p name = "productID_new" id = "productID_new">ID:</p>
+                 
+                <h1>New Product<
+                    /h1>
+                <p name = "ID">Product ID: (randomly generated)</p>
+                <p name = "productID_new" id = "productID_new"></p> 
+                 
+                <p name = "NAME">Name:</p>
                 <input type = "text" id ="nameSetText" value = "Apple">
-                <br>
-                <button onclick = "setName()">Set Name</button>
-                <br>
+                <br> 
+                 
+                <p name = "PRICE">Price:</p>
                 <input type = "number" id = "priceSetText" value = "3">
                 <br>
-                <button onclick = "setPrice()">Set Price</button>
-                <br>
-                <p id = "productInStock">In stock: 0</p>
+                 
+                <p id = "STOCK">In stock:</p>
                 <button onclick = "subtractStock()">-</button>
-                <input type = "number" value = "0">
+                <input type = "number" value = "0" maxlength="99">
                 <button onclick = "addStock()">+</button>
-                
                 <br>
-                  <br>
+                <br>
+                <br>
+                <br>
                 <button onclick = "createProduct()">Create Product</button>
                 <br>
-                <button>Delete</button>
+                <button>Cancel</button>
                 </div>
         
         </div>

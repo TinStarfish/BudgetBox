@@ -32,8 +32,6 @@ var cognitoUser;
 
 var thankYouText = document.getElementById("thankYouText");
 
-var productList = [];
-var listID = [11];
 
 //Listen for enter key while signing in
 window.onkeyup = function(e) {
@@ -57,10 +55,6 @@ function thankYou() {
    thankYouText.innerHTML = "Thank you, " + cognitoUser.getUsername() + ". Your order has been placed.";
     
 }
-
-
-
-
 
 //Create account through sign in page
 function createAccount(){

@@ -1,15 +1,31 @@
 //Code by Trevor Waters (2018)
-
+console.log("Admin page loading...");
 var modal = document.getElementById('popupProduct');
 var modal_user = document.getElementById('popupUser');
 var modal_new_product = document.getElementById('popupNewProduct');
 var span = document.getElementsByClassName("close")[0];
 var productID = document.getElementById("productID_new");
+
 var nameSetText = document.getElementById("nameSetText");
 var priceSetText = document.getElementById("priceSetText");
 
 var productList = [];
 var listID = [11];
+
+console.log("Loaded.");
+
+function loadProducts () {
+    var some
+    
+    
+}
+
+function changePage(pageName) {
+    if (window.location!=pageName) {
+    window.location = pageName;
+    }
+    
+}
 
 //View products on admin page
 function viewProducts() {    
@@ -37,39 +53,22 @@ function editUser (ID, name, admin, current) {
     
 }
 
+//Opens new product tab and assigns new product an ID
 function newProduct () {
     modal_new_product.style.display = "block"; 
     var ID = Math.round((Math.random() * 1000) + (Math.random() * 1000));
-    //var ID = 11;
-    var name = nameSetText.innerHTML;
-    var price = priceSetText.innerHTML;
-    
 
-    
-    //Assign random ID to product
+    //Assign randomized ID to product
     for (i = 0; i < listID.length; i++) {
         if (ID==listID[i]) {
             console.log("ID " + ID + " was taken. Rerolling.")
             ID = Math.round((Math.random() * 1000) + (Math.random() * 1000));
             console.log(ID + " is your new ID.")
         
-        }
-        
+        }   
     }
-    
-    if (price <= 0) {
-        console.log("Price: " + price + " invalid. Please try again.")   
-        
-    }
-    
-    //
-    
-    productID.innerHTML = "ID: " + ID;
-    console.log("ID: " + ID + " successfully assigned.");
-    //
-    console.log("Name: " + name + " successfully assigned.");
-    //
-    console.log("Price: " + price + " successfully assigned.");
+
+    productID.innerHTML = "#" + ID;
     
 }
 
@@ -77,20 +76,30 @@ function createProduct() {
     
     var product = [
         productID.innerHTML,
-        nameSetText.innerHTML,
-        priceSetText.innerHTML
+        nameSetText.value,
+        priceSetText.value
         
     ];
     
     productList.push(product);
     sessionStorage.setItem('product',productList);
     console.log(sessionStorage.getItem('product'));
-    console.log(productList[0]);
+    console.log(productList);
 }
 
 function newUser () {
     
     
+    
+}
+
+function setName () {
+    console.log("NAME SET");
+    
+}
+
+function setPrice () {
+    console.log("PRICE SET");
     
 }
 
