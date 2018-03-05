@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<title>Creating a Store Locator on Google Maps</title>
+		<title>Pick A Nearby Store To Shop</title>
 	<style>
 		/* Always set the map height explicitly to define the size of the div
 		 * element that contains the map. */
@@ -20,7 +20,7 @@
 	</head>
     <link rel="stylesheet" type="text/css" href="style.css">
 	<img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
-    <h1>Track</h1>
+    <h1>Find Local Stores</h1>
      <div class="navigationDiv">
                 <button onclick="changePage('index.html')">Home</button>
                 <button onclick="changePage('products.html')">Products</button>
@@ -67,9 +67,9 @@
 			var locationSelect;
 
 			function initMap() {
-				var sydney = {lat: -33.863276, lng: 151.107977};
+				var slc = {lat: 40.7762691, lng: -112.2006695};
 				map = new google.maps.Map(document.getElementById('map'), {
-					center: sydney,
+					center: slc,
 					zoom: 11,
 					mapTypeId: 'roadmap',
 					mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
