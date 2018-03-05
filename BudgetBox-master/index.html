@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="stylesheet.css"/>
+	<head>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
+	</head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<img src = "picnicbasket.png" alt "Logo" style="width:200px;height:200px">
+    <h1 id = "CompanyName">BudgetBox</h1>
+    
+    <body>
+         <div class="navigationDiv">
+            <h3>Navigation</h3>
+                <button onclick="changePage('products.html')">Products</button>
+                <button onclick="changePage('Products.html')">Shop</button>
+                <button onclick="changePage('checkout.html')">Cart</button>
+                <button onclick="changePage('userProfile.html')">My Profile</button>
+        </div>
+		<div class="createAccountDiv" style="display: none;">
+			<h2>Create Account</h2>
+            <form id="createAccountForm" action="">
+                    Username: <input type="text" id="formUN"><br>
+                    Email: <input type="text" id="formEM"><br>
+                    Password: <input type="text" id="formPW"><br>
+            </form>
+			<button onclick="createAccount()">Create Account</button>
+            <h2>Or Sign In</h2>
+            <form id = "signInForm" action = "">
+                    Username: <input type = "text" id = "loginUsername"><br>
+                    Password: <input type = "text" id = "loginPassword"><br>
+            </form>
+            <button onclick="performLogin()">Sign In</button>
+		</div>
+
+		<div class="logoutDiv" style="display: none;">   
+			<h2>Welcome</h2>
+            <div id = "usernameDiv"></div>
+            <button onclick="logout()">Logout</button>
+        
+            
+		</div>
+    </body>
+	<script src="script.js"></script>
+</html>

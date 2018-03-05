@@ -3,8 +3,7 @@ Body{
 }
 
 h1{
-    color: #E7E8E7;
-    text-align: right;
+   text-align: center;
 }
 
 h3 {
@@ -19,9 +18,18 @@ h3 {
     background-color: #C4BFBC;
 }
 
+#Title {
+    color: #E7E8E7;
+    text-align: right; 
+}
+
 label {
     display: block;
     margin-bottom: 15px;
+}
+
+#CompanyName {
+    text-align: left;
 }
 
 .createAccountDiv {
@@ -40,4 +48,43 @@ label {
 #signInForm {
     display: block;
     margin-bottom: 15px;
+}
+
+.productsDiv {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    margin: 150px;
+    background-color: #C4BFBC;
+}
+
+.cart {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    margin: 150px;
+    background-color: #C4BFBC;
+}
+
+#CustomerInformation {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    background-color: #C4BFBC;
+}
+
+#CheckoutTop {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    margin: 150px;
+    background-color: #C4BFBC;
+}
+
+#FinalButtons {
+    text-align: center;
+    border: 5px solid #3E3D3E;
+    padding: 15px;
+    margin: 150px;
+    background-color: #C4BFBC;
 }
