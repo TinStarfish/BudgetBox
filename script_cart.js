@@ -8,12 +8,14 @@ var runningTotal = 0;
 var salesTax = .05;
 var shippingCost = 10;
 var flatShippingRate = 10;
-var discount = 10;
+var basicDiscount = 3;
 
-var cartText = document.getElementById("itemsTable");
+var itemsTable = document.getElementById("itemsTable");
 var runningText = document.getElementById("totalTable");
 var finalCartText = document.getElementById("finalCart");
 
+
+var finalItems = document.getElementById("yourItems");
 var finalTotalText = document.getElementById("finalRunningTotal");
 var taxText = document.getElementById("salesTaxText");
 var shippingText = document.getElementById("shippingText");
@@ -22,47 +24,33 @@ var checkoutTotalText = document.getElementById("finalTotal");
 
 var customerInfo;
 
+//Runs the script
+main();
+
+function main () {
+    setShippingCost();
+    finalTotalText.innerHTML = runningTotal;
+    finalCart();   
+    
+}
+
 function getProducts() {
 	console.log("Running getProducts.");
 	var myProducts = JSON.parse(products);
 	createTable(myProducts);
 }
 
-window.onkeyup = function(e) {
-    var key = e.keyCode;
-    if (key == 13) {
-        console.log("ENTER");
-        
+function getCart() {
+    var strcart = sessionStorage.getItem("Cart");
+    var tempArr = strcart.split(",");
+    var temp = [];
+    for (var i = 0; i < tempArr.length;) {
+        temp[temp.length] = (tempArr[i]);
+        i += 3;
         
     }
-    console.log("NOT ENTER");
     
-}
-
-function createTable(myProducts) {
-	console.log("Running createTable.");
-	var products = myProducts;
-	var myTable = "<table><thead><tr>";
-	myTable+="<th scope=\"col\">Product Name</th>";
-	myTable+="<th scope=\"col\">Price</th>";
-	myTable+="</tr></thead><tbody>";
-	
-	for (i = 0; i < products.length; i++) {
-		myTable+="<tr><td>";
-		myTable+=products[i].name;
-		myTable+="</td><td>$";
-		myTable+=products[i].price;
-		myTable+="</td></tr>";
-	}
-	myTable+="</tbody></table>";
-	
-	document.getElementById('myItems').innerHTML = myTable;
-}
-
-function getCart() { 
-    return sessionStorage.getItem("Cart");
-    //return cart;
-    
+    return temp;
 }
 
 function resetCart() { 
@@ -74,13 +62,24 @@ function resetCart() {
     
 }
 
-function addCart(item, price) {   
-    cart[cart.length] = item;
-    runningTotal += price;
-    updateCart();
-    updateRunningTotal();
+function addCart (item, amount, price) {
+    itemsTable.insertRow(cart.length + 1).innerHTML = '<tr><td>'+item+'</td><td>'+amount+'</td><td>'+price+'</td></tr>';
+    cart[cart.length] = [item , amount, price];
+    sessionStorage.setItem("Cart",cart);
+    addTotal (price);
+    finalTotalText.innerHTML = runningTotal;
+    
+    
     
 }
+
+function addTotal (price) {
+    runningTotal += price;
+    sessionStorage.setItem("Total",runningTotal);
+    
+    
+}
+
 
 function getTotal() {
     return JSON.parse(sessionStorage.getItem("Total"));
@@ -122,12 +121,7 @@ function updateCart() {
     sessionStorage.setItem("Cart",cart);
     console.log(getCart());
     
-    for (i = 0; i <= cart.length; i++) {
-        for (j = 1; j <= cart.length; j++) {
-            cartText.rows[j].cells[i].innerHTML = getCart();
-        
-            }
-    }
+    cartText.rows[cart.length].cells[0].innerHTML = getCart();
     
 }
 
@@ -146,26 +140,27 @@ function changePage(pageName) {
 }
 
 function finalCart() {
-    
-    finalCartText.innerHTML = getCart();
-    
+   console.log("final cart");
+    var items = getCart();
     var total = getTotal();
-    var tax = Math.round(getTotal() * getSalesTax() * 100)/100;
-    var shipping = Math.round(getShippingCost(shippingCost));
-    var final = Math.round(total + tax + shipping - discount) ;
-    console.log(getCart());
-    finalCartText.innerHTML = getCart();
-    console.log(getTotal());
-    finalTotalText.innerHTML = "Total: " + getTotal();
-    taxText.innerHTML = "Tax: +" + tax;
-    shippingText.innerHTML = "Shipping: +" + shipping;
-    discountText.innerHTML = "Discount: -" + discount + " (Sign up for a discount on your first order!)";
-    checkoutTotalText.innerHTML = "Final Amount:    $" + final;
-        
+    var tax = Math.round(total * getSalesTax() * 100)/100;
+    var shipping = Math.round(flatShippingRate);
+    var discount = basicDiscount;
+    var final = (total + tax + shipping - discount);
+    
+    console.log(items + " " + final);
+    
+    
+    finalItems.innerHTML = items;
+    finalTotalText.innerHTML = "Total: " + total;
+    taxText.innerHTML = "Tax: " + tax;
+    shippingText.innerHTML = "Shipping: " + shipping;
+    discountText.innerHTML = "Discount: " + discount + " (signed in discount)";
+    checkoutTotalText.innerHTML = final;
+    
 }
 
-function setCustomerInformation() {
-    
+function setCustomerInformation() {  
     var name = document.getElementById("customer_name").value;
     var email = document.getElementById("customer_email").value;
     var phone = document.getElementById("customer_phone").value;
@@ -189,8 +184,7 @@ function setCustomerInformation() {
 }
 
 function checkInformation () {
-    
-    //This will interact with Amazon Pay, ignore
+    //This will interact with Amazon Pay, ignore for now
     console.log(setCustomerInformation());
     if (setCustomerInformation!==null) {
         console.log("Customer Information was accepted.");
@@ -205,8 +199,7 @@ function checkInformation () {
     
 }
 
-function purchaseItems() {  
-    
+function purchaseItems() {    
     setCustomerInformation();
     checkInformation();
     console.log(customerInfo);
@@ -257,5 +250,3 @@ function dropDown() {
   }
 }
 
-setShippingCost();
-finalCart();

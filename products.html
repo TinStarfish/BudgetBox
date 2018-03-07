@@ -16,16 +16,13 @@
                 <button onclick="changePage('contactUs.html')">Contact Us</button>
                 <button onclick="changePage('administrative.html')">Admin (temp)</button>
                 <button onclick="changePage('checkout.html')"style="float: right;">Cart</button>
-                <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
-                
+                <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>  
         </div>
-     
     <h2>Groceries</h2>
     <div class = "productsDiv">
         <h3>Meats</h3>
             <p>
               Prices are not calculated based on weight.  
-        
         </p>
            <table id = "foodItemsTable">
             <tr>
@@ -38,27 +35,27 @@
                 <td>1010101</td>
                 <td>Ground Beef</td>
                 <td>$1</td>
-                <td><button id = "button1" onclick = "addCart('Apple', 1)">Add to Cart</button></td>
+                <td><button id = "button1" onclick = "addCart('Ground Beef', 1, 3)">Add to Cart</button></td>
                     </tr>
         <tr>
                 <td>1511121</td>
                 <td>Spicy Meatballs</td>
                 <td>$5</td>
-                 <td><button id = "button1" onclick = "addCart('SpicyMeatballs', 5)">Add to Cart</button></td>
+                 <td><button id = "button1" onclick = "addCart('SpicyMeatballs', 5, 3)">Add to Cart</button></td>
             </tr>
              <tr>
                 <td>1511134</td>
                 <td>Pork Chops</td>
                 <td>$4</td>
                
-                 <td><button id = "button1" onclick = "addCart('MemeSauce', 4)">Add to Cart</button></td>
+                 <td><button id = "button1" onclick = "addCart('Pork Chops', 1, 4)">Add to Cart</button></td>
             </tr>
             <tr>
                 <td>1234567</td>
                 <td>Chicken Breasts</td>
                 <td>$11</td>
              
-                  <td><button id = "button1" onclick = "addCart('BrokenDreams', 11)">Add to Cart</button></td>
+                  <td><button id = "button1" onclick = "addCart('Chicken Breasts', 1, 11)">Add to Cart</button></td>
             </tr>
 
 
@@ -76,32 +73,31 @@
                 <td>1010101</td>
                 <td>Pizza Rolls</td>
                 <td>$1</td>
-                <td><button id = "button1" onclick = "addCart('Apple', 1)">Add to Cart</button></td>
+                <td><button id = "button1" onclick = "addCart('Pizza Rolls', 1, 1)">Add to Cart</button></td>
                     </tr>
         <tr>
                 <td>1511121</td>
                 <td>Corn Dogs</td>
                 <td>$5</td>
-                 <td><button id = "button1" onclick = "addCart('SpicyMeatballs', 5)">Add to Cart</button></td>
+                 <td><button id = "button1" onclick = "addCart('Corn Dogs', 1, 5)">Add to Cart</button></td>
             </tr>
              <tr>
                 <td>1511134</td>
-                <td>Ready-to-Eat Meal</td>
+                <td>Ready-to-Eat Meal- "Beef?"</td>
                 <td>$4</td>
                
-                 <td><button id = "button1" onclick = "addCart('MemeSauce', 4)">Add to Cart</button></td>
+                 <td><button id = "button1" onclick = "addCart('REM-Beef', 1, 4)">Add to Cart</button></td>
             </tr>
             <tr>
                 <td>1234567</td>
                 <td>Vanilla Ice Cream</td>
                 <td>$11</td>
              
-                  <td><button id = "button1" onclick = "addCart('BrokenDreams', 11)">Add to Cart</button></td>
+                  <td><button id = "button1" onclick = "addCart('Ice Cream- Vanilla', 1, 11)">Add to Cart</button></td>
             </tr>
 
 
         </table>
-        
         <h3>Bread/Cereal/Rice/Pasta</h3>
            <table id = "foodItemsTable">
             <tr>
@@ -112,29 +108,29 @@
         </tr>
         <tr>
                 <td>1010101</td>
-                <td>Bread</td>
+                <td>Wheat Bread</td>
                 <td>$1</td>
-                <td><button id = "button1" onclick = "addCart('Apple', 1)">Add to Cart</button></td>
+                <td><button id = "button1" onclick = "addCart('Bread', 1, 1)">Add to Cart</button></td>
                     </tr>
         <tr>
                 <td>1511121</td>
                 <td>Cereal</td>
                 <td>$5</td>
-                 <td><button id = "button2" onclick = "addCart('SpicyMeatballs', 5)">Add to Cart</button></td>
+                 <td><button id = "button2" onclick = "addCart('Cereal', 1, 5)">Add to Cart</button></td>
             </tr>
              <tr>
                 <td>1511134</td>
                 <td>Rice</td>
                 <td>$4</td>
                
-                 <td><button id = "button3" onclick = "addCart('MemeSauce', 4)">Add to Cart</button></td>
+                 <td><button id = "button3" onclick = "addCart('Rice', 1, 4)">Add to Cart</button></td>
             </tr>
             <tr>
                 <td>1234567</td>
                 <td>Pasta</td>
                 <td>$11</td>
              
-                  <td><button id = "button4" onclick = "addCart('BrokenDreams', 11)">Add to Cart</button></td>
+                  <td><button id = "button4" onclick = "addCart('Pasta', 1, 11)">Add to Cart</button></td>
             </tr>
 
 
@@ -143,8 +139,6 @@
     </div>
     <h2>Cart</h2>
     <div class = "cart">
-        
-        
             <h3>Items</h3>
         <table class = "itemsTable" id = "itemsTable">
             <th>Name</th>
@@ -160,14 +154,7 @@
      
               
             <h3>Running Total</h3>
-         <table class = "totalTable" id = "totalTable">
-            <th>Total Amount</th>
-            <tr>
-                <td>$0</td>
-             </tr>
-        
-        
-        </table>
+            <div id = "finalRunningTotal">+ (final running total)</div>
             <br>
             <center>
             <button onclick = "changePage('checkout.html')">Continue to Checkout</button><br>
@@ -179,6 +166,6 @@
     </div>
     
    <script src = "script.js"></script>
-    <script src = "script_cart.js"></script>
+   <script src = "script_cart.js"></script>
     
 </html>

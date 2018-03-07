@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    
+<head> 
     <link rel = "icon" href = "pageIcon.png">
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
@@ -28,8 +27,7 @@
     <div id = "form">
     <h2>Items in Cart</h2>
     <h3>Your items:</h3>
-    <div id = "finalCart">Empty</div> 
-    <hr size = "1" color = "steelblue">
+    <div id = "yourItems">Your cart is empty.</div>
     <h3>Your total:</h3>
     <div id = "finalRunningTotal">+ (final running total)</div>
         <hr size = "1" color = "steelblue">
@@ -54,8 +52,7 @@
         </label><br>
         <label>Continue as Guest or Sign up? (Discounts offered for signed in profile)
             <br>
-        <button>Guest</button>
-        <button>Sign Up</button>
+        <button onclick = "changePage('index.html')">Sign Up</button>
         </label><br>
         
     <h2>Customer Address</h2>
@@ -140,7 +137,8 @@
       
     </div>
     
+      <script src = "script.js"></script>
       <script src="script_cart.js"></script> 
-    <script src = "script.js"></script>
+    
     
 </html>
