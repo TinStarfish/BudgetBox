@@ -15,6 +15,7 @@
           <body>
          <div class="navigationDiv">
                 <button onclick="changePage('index.html')">Home</button>
+                <button onclick="changePage('storeselection.html')">Shop</button>
                 <button onclick="changePage('products.html')">Products</button>
                 <button onclick="logout()"style="float: right;">Logout</button>
                 <button onclick="changePage('contactUs.html')">Contact Us</button>
@@ -40,42 +41,6 @@
                         <th>Price</th>
                         <th>In Stock</th>
                         <th>Edit</th>
-                    </tr>
-                    <tr>
-                        <td>1010101</td>
-                        <td>Apple</td>
-                        <td>$1</td>
-                        <td>65</td>
-                        <td>
-                            <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
-                            </td>
-                    </tr>
-                     <tr>
-                        <td>1511121</td>
-                        <td>Spicy Meatballs</td>
-                        <td>$5</td>
-                        <td>18</td>
-                         <td>
-                         <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
-                            </td>
-                    </tr>
-                     <tr>
-                        <td>1511134</td>
-                        <td>Meme Sauce</td>
-                        <td>$4</td>
-                        <td>24</td>
-                         <td>
-                         <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td>1234567</td>
-                        <td>Broken Dreams</td>
-                        <td>$11</td>
-                        <td>3</td>
-                        <td>
-                        <button id="edit" type="submit" name="edit" value="Edit" onclick = "editProduct (1010101, 'Apple', 1)">Edit</button>
-                            </td>
                     </tr>
             </table>
 
@@ -188,11 +153,11 @@
                 <p name = "productID_new" id = "productID_new"></p> 
                  
                 <p name = "NAME">Name:</p>
-                <input type = "text" id ="nameSetText" value = "Apple">
+                <input type = "text" id ="productName_new" value = "Apple">
                 <br> 
                  
                 <p name = "PRICE">Price:</p>
-                <input type = "number" id = "priceSetText" value = "3">
+                <input type = "number" id = "productPrice_new" value = "3">
                 <br>
                  
                 <p id = "STOCK">In stock:</p>
@@ -224,6 +189,7 @@
         
     </body>
     
+    <script src = "script.js"></script>
     <script src="script_admin.js"></script>
     
 </html>

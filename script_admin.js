@@ -4,10 +4,12 @@ var modal = document.getElementById('popupProduct');
 var modal_user = document.getElementById('popupUser');
 var modal_new_product = document.getElementById('popupNewProduct');
 var span = document.getElementsByClassName("close")[0];
-var productID = document.getElementById("productID_new");
 
-var nameSetText = document.getElementById("nameSetText");
-var priceSetText = document.getElementById("priceSetText");
+var productID_new = document.getElementById("productID_new");
+var productName_new = document.getElementById("productName_new");
+var productPrice_new = document.getElementById("productprice_new");
+
+var productsTable = document.getElementById("productsTable");
 
 var productList = [];
 var listID = [11];
@@ -70,21 +72,34 @@ function newProduct () {
 
     productID.innerHTML = "#" + ID;
     
+    
+    
 }
 
 function createProduct() {
+    var productId = productID_new.innerHTML;
+    var productName = productName_new.innerHTML;
+    var productPrice = producPrice_new.innerHTML;
     
     var product = [
-        productID.innerHTML,
-        nameSetText.value,
-        priceSetText.value
+        productId,
+        productName,
+        productPrice
+        
         
     ];
+    
+    console.log("New product- " + product);
     
     productList.push(product);
     sessionStorage.setItem('product',productList);
     console.log(sessionStorage.getItem('product'));
     console.log(productList);
+
+    productsTable.insertRow(productList.length).innerHTML = '<tr><td>'+productId+'</td><td>'+"productName"+'</td><td>'+productPrice+'</td></tr>';
+            
+    modal_new_product.style.display = "none";
+    
 }
 
 function newUser () {

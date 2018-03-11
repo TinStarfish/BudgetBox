@@ -14,7 +14,6 @@ var itemsTable = document.getElementById("itemsTable");
 var runningText = document.getElementById("totalTable");
 var finalCartText = document.getElementById("finalCart");
 
-
 var finalItems = document.getElementById("yourItems");
 var finalTotalText = document.getElementById("finalRunningTotal");
 var taxText = document.getElementById("salesTaxText");
