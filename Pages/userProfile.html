@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+        <link rel="stylesheet" type="text/css" href="../Scripts/style.css">
+	<img src = "../Sources/picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
+    <h1>Profile</h1>
+         <div class="navigationDiv">
+                <button onclick="changePage('index.html')">Home</button>
+                <button onclick="changePage('storeselection.html')">Shop</button>
+                <button onclick="logout()"style="float: right;">Logout</button>
+                <button onclick="changePage('contactUs.html')">Contact Us</button>
+                <button onclick="changePage('administrative.html')">Admin (temp)</button>
+                <button onclick="changePage('checkout.html')"style="float: right;">Cart</button>
+                <button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
+                
+        </div>
+        
+            <div id="Profile">
+                <h2>My Profile</h2>
+                <h3 id = "usernameDiv">Hello, ####.</h3>
+                <form id="userProfile" method="post">
+                    <button>Forgot Password?</button>
+                    <br>
+                    <br>
+                    <button>My Orders</button>
+                    <br>
+                    <br>
+                    <button>Payment Options</button>
+                    <br>
+                    <br>
+                    <button>My Addresses</button>
+                    <br>
+                    <br>
+                    <button>Become a Driver</button>
+                
+                </form>
+            </div>
+         <div class = "bottomDiv" id = "bottomDiv">
+            <hr size = "3" color = "steelblue">
+            <a href="index.html">
+        <img src = "picnicbasket_2.png" alt "Logo" style="width:500px;height:200px">
+      </a>
+            <br>
+            
+            Copyright (2018).
+            <br>
+            BudgetBox Corp.
+            <br>
+            Site Design by: Trevor Waters (2018)
+        </div>
+            
+    </body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="script_profile.js"></script>
+    
+    
+</html>

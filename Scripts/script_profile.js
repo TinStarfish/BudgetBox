@@ -7,5 +7,15 @@ function profileSubmit(){
     var proAddress = document.getElementById("Address").value;
     var proCard = document.getElementById("CardInfo").value;
     
+    console.log(proUN, proPW, proEmail, proName, proPhone, proAddress, proCard);
     //save or update user
 };
+
+function changePage(pageName) {
+    if (window.location!=pageName) {
+    window.location = pageName;
+    }
+    
+}
+
+$("#usernameDiv").html("Hello, " + cognitoUser.getUsername() + ".");
