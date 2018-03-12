@@ -44,7 +44,7 @@ function getCart() {
     var tempArr = strcart.split(",");
     var temp = [];
     for (var i = 0; i < tempArr.length;) {
-        temp[temp.length] = (tempArr[i]);
+        temp[temp.length] = " " + (tempArr[i]) + "<br>";
         i += 3;
         
     }
