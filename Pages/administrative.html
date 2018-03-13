@@ -27,7 +27,7 @@
         <div class = "adminLoggedIn" id = "adminLoggedIn">
             <h2>Administrator View</h2>
             <h3>Support Tickets</h3>
-                <button>View Tickets</button>
+                <button id = "viewTickets" onclick = "viewTickets()">View Tickets</button>
             <h3>Products</h3>
                 <button id = "viewProducts" onclick = "viewProducts()">View Products</button>
                 <br>
@@ -175,6 +175,30 @@
                 <br>
                 <button>Cancel</button>
                 </div>
+            
+            <div id = "popupViewTicket" class = "modal">
+                <span class = "close">&times;</span>
+                 
+                <h1>Tickets</h1>
+                <button>Previous Ticket</button>
+                <button>Next Ticket</button>
+                <p name = "ID">Ticket ID: (randomly generated)</p>
+                <p name = "productID_new" id = "productID_new"></p>          
+                <p name = "NAME">Customer Name:</p>
+                <p name = "CUSTOMERNAME">Trevor</p>
+                <p name = "PRICE">Problem:</p>
+                <p>I was using the site then it crashed while purchasing my stuff :/</p>
+                <br>
+                <p>Reply to Ticket:</p>
+                <input>
+                <button>Send</button>
+                <br>
+                <button>Send Ticket to IT</button>
+                <br>
+                <button>Delete Ticket</button>
+                <br>
+                <button>Cancel</button>
+                </div>
         
         </div>
          <div class = "bottomDiv" id = "bottomDiv">
@@ -193,6 +217,5 @@
     </body>
     
     <script src="../Scripts/script.js"></script>
-    <script src="script_admin.js"></script>
-    
+    <script src="../Scripts/script_admin.js"></script>    
 </html>

@@ -163,7 +163,7 @@ function finalCart() {
     finalItems.innerHTML = items;
     finalTotalText.innerHTML = "Total: " + total;
     taxText.innerHTML = "Tax: " + tax;
-    shippingText.innerHTML = "Shipping: " + shipping;
+    shippingText.innerHTML = "Delivery Fee: " + shipping;
     discountText.innerHTML = "Discount: " + discount + " (signed in discount)";
     checkoutTotalText.innerHTML = final;
     

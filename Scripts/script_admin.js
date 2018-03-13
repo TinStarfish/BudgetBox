@@ -3,11 +3,12 @@ console.log("Admin page loading...");
 var modal = document.getElementById('popupProduct');
 var modal_user = document.getElementById('popupUser');
 var modal_new_product = document.getElementById('popupNewProduct');
+var modal_tickets = document.getElementById("popupViewTicket");
 var span = document.getElementsByClassName("close")[0];
 
 var productID_new = document.getElementById("productID_new");
 var productName_new = document.getElementById("productName_new");
-var productPrice_new = document.getElementById("productprice_new");
+var productPrice_new = document.getElementById("productPrice_new");
 
 var productsTable = document.getElementById("productsTable");
 
@@ -41,6 +42,13 @@ function viewUsers() {
     console.log("executing viewProducts()...");
 	$("usersView").show();
     console.log('End of viewProducts()');
+    
+}
+
+function viewTickets() {
+    console.log("executing viewtickets()...");
+     modal_tickets.style.display = "block";
+    
     
 }
 
@@ -79,7 +87,7 @@ function newProduct () {
 function createProduct() {
     var productId = productID_new.innerHTML;
     var productName = productName_new.innerHTML;
-    var productPrice = producPrice_new.innerHTML;
+    var productPrice = productPrice_new.innerHTML;
     
     var product = [
         productId,
