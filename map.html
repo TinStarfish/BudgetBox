@@ -99,7 +99,6 @@
 		<button onclick="changePage('userProfile.html')" style="float: right;">My Profile</button>
 	</div>
 	<body style="margin:0px; padding:0px;">
-	
 			<div class="pac-card" id="pac-card">
 			<div>
 				<div id="title">
@@ -165,7 +164,7 @@
 			var markers = [];
 			var infowindow;
 			var locationSelect;
-			/*var currentPosition;
+			var currentPosition;
 			var currLat;
 			var currLng;
 			
@@ -177,17 +176,18 @@
 					currentPosition = {lat: 40.7762691, lng: -112.2006695}
 				}
 			}
-			
-			function setPosition() {
+				
+			function setPosition(position) {
 				currLat = position.coords.latitude;
 				currLng = position.coords.longitude;
 				currentPosition = {lat: currLat, lng: currLng}
-			}*/
-
+			}
+			
 			function initMap() {
-				var slc = {lat: 40.7762691, lng: -112.2006695};
+				getLocation();
+				
 				map = new google.maps.Map(document.getElementById('map'), {
-					center: slc,
+					center: currentPosition,
 					zoom: 11,
 					mapTypeId: 'roadmap',
 					mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
