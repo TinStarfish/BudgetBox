@@ -40,13 +40,23 @@ function getProducts() {
 }
 
 function getCart() {
+    var firstInCart = true;
     var strcart = sessionStorage.getItem("Cart");
     var tempArr = strcart.split(",");
+    console.log(tempArr);
     var temp = [];
     for (var i = 0; i < tempArr.length;) {
-        temp[temp.length] = " " + (tempArr[i]) + "<br>";
-        i += 3;
-        
+        if (firstInCart) {
+            temp[temp.length] =(tempArr[i]);
+            firstInCart = false;
+            i+= 3;
+            
+        } 
+        else {
+            temp[temp.length] = "<br>" + (tempArr[i]);
+            i += 3;
+            
+        }
     }
     
     return temp;
